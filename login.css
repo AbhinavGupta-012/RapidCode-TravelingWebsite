@@ -1,0 +1,246 @@
+/* Import Montserrat font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(120deg, #8e2de2, #4a00e0);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: #333;
+}
+
+/* Main container */
+.masterContainer {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Login box container */
+#loginbox {
+    display: flex;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    background: white;
+    height: 500px;
+}
+
+/* Box areas - left and right sides */
+.boxArea {
+    width: 50%;
+}
+
+/* Left side with graphic */
+#graphic {
+    background: linear-gradient(to right, #8e2de2, #4a00e0);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+#graphicImage {
+    max-width: 80%;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s ease;
+}
+
+#graphicImage:hover {
+    transform: scale(1.05);
+}
+
+#graphic p {
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 20px;
+    opacity: 0.9;
+}
+
+/* Right side with login form */
+#LoginArea {
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Form layout */
+#loginForm {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Box items inside form */
+.boxItems {
+    width: 100%;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.boxItems img {
+    max-width: 100px;
+    margin-bottom: 10px;
+}
+
+.boxItems p {
+    font-size: 22px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+/* Input fields */
+.inputs {
+    text-align: left;
+}
+
+.inputs label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #555;
+    text-transform: capitalize;
+}
+
+.inputs input {
+    width: 100%;
+    padding: 14px 16px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    background: rgba(238, 238, 238, 0.5);
+    transition: all 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.inputs input:focus {
+    background: #fff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(142, 45, 226, 0.2);
+}
+
+/* Submit button */
+#submitButton {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(to right, #8e2de2, #4a00e0);
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(142, 45, 226, 0.4);
+    letter-spacing: 1px;
+}
+
+#submitButton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(142, 45, 226, 0.6);
+}
+
+#submitButton:active {
+    transform: translateY(0);
+}
+
+/* Create account link */
+#log-on {
+    margin-top: 10px;
+}
+
+#log-on p {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+#log-on a {
+    color: #8e2de2;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+#log-on a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background: linear-gradient(to right, #8e2de2, #4a00e0);
+    transition: width 0.3s ease;
+}
+
+#log-on a:hover::after {
+    width: 100%;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    #loginbox {
+        flex-direction: column;
+        height: auto;
+    }
+    
+    .boxArea {
+        width: 100%;
+    }
+    
+    #graphic {
+        padding: 30px 20px;
+    }
+    
+    #graphic p {
+        font-size: 18px;
+    }
+    
+    #LoginArea {
+        padding: 30px 20px;
+    }
+}
+
+/* Adding some animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.boxItems {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.boxItems:nth-child(1) { animation-delay: 0.1s; }
+.boxItems:nth-child(2) { animation-delay: 0.2s; }
+.boxItems:nth-child(3) { animation-delay: 0.3s; }
+.boxItems:nth-child(4) { animation-delay: 0.4s; }
+.boxItems:nth-child(5) { animation-delay: 0.5s; }
+.boxItems:nth-child(6) { animation-delay: 0.6s; }
